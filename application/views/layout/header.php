@@ -9,14 +9,14 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Restó</a>
+	      <a class="navbar-brand" href="<?php base_url()?>layout_controller/index/">Restó</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="<?php base_url()?>productos_controller/cargar_vista_abm_productos/">Menú</a></li>
-					<li><a href="#">Reservas</a></li>
+					<li><a href="<?php base_url()?>reservas_controller/cargar_vista_abm_reservas/">Reservas</a></li>
 					<li><a href="#">Usuarios</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
