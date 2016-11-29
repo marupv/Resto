@@ -3,7 +3,7 @@ class productos_model extends CI_Model  {
 
 // Atributos
 	public $cod;
-	public $nombre;
+	public $descripcion;
 	public $observaciones;
 	public $categoria;
 	public $precio;
@@ -16,12 +16,18 @@ class productos_model extends CI_Model  {
 // Métodos
    	function traer_productos(){
       //Obtiene el listado de productos
-      $this->db->select('cod, descripcion, observaciones, categoria, precio');
+      $this->db->select('id, cod, descripcion, observaciones, categoria, precio');
       $this->db->from('productos');
       $consulta = $this->db->get();
       $resultado = $consulta->result_array();
       return $resultado;
    	}
+
+		function borrar_producto($id){
+			//Borra un producto
+			$this->db->where('id', $id);
+   		$this->db->delete('productos');
+		}
 
       function traer_un_producto($id){
       //Obtiene un producto
@@ -33,11 +39,11 @@ class productos_model extends CI_Model  {
       return $resultado;
       }
 
-      function insertar_producto($cod,$nombre,$observaciones,$categoria,$precio){
+      function insertar_producto($cod,$descripcion,$observaciones,$categoria,$precio){
       //Inserta datos en la tabla productos
         $data = array(
            'cod' => $cod,
-           'nombre' => $nombre,
+           'descripcion' => $descripcion,
            'observaciones' => $observaciones,
            'categoria' => $categoria,
            'precio' => $precio

@@ -5,14 +5,20 @@
 	  COD:<br>
 	  <input type="text" name="cod">
 	  <br>
-	  Nombre:<br>
-	  <input type="text" name="nombre">
+	  Descripcion:<br>
+	  <input type="text" name="descripcion">
 	  <br>
 	  Observaciones:<br>
 	  <input type="text" name="observaciones">
 	  <br>
 	  Categoría:<br>
-	  <input type="text" name="categoria">
+		<select class="form-control" name="categoria">
+		  <option value="Bebidas">Bebidas</option>
+		  <option value="Entrada">Entradas</option>
+		  <option value="Platos">Platos</option>
+		  <option value="Postres">Postres</option>
+		  <option value="Extras">Extra</option>
+		</select>
 	  <br>
 	  Precio:<br>
 	  <input type="number" name="precio">

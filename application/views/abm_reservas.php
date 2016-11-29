@@ -1,9 +1,9 @@
 <body>
 
 <div class="row">
-  <h1 class="col-lg-8">Menú</h1>
-  <a href="<?php echo base_url()?>productos_controller/editar_productos/" class="btn btn-success btn-add col-lg-4">
-    <span class="glyphicon glyphicon-plus"></span> Agregar productos
+  <h1 class="col-lg-8">Reservas</h1>
+  <a href="<?php echo base_url()?>reservas_controller/traer_reservas/" class="btn btn-success btn-add col-lg-4">
+    <span class="glyphicon glyphicon-plus"></span> Agregar reserva
   </a>
 </div>
 
@@ -13,11 +13,12 @@
 <table class="table">
     <thead>
       <tr>
-        <th>Código</th>
-        <th>Descripción</th>
-        <th>Observaciones</th>
-        <th>Categoría</th>
-        <th>Precio</th>
+        <th>Fecha</th>
+        <th>Cantidad de personas</th>
+        <th>Cliente</th>
+        <th>Teléfono</th>
+        <th>Comentarios</th>
+        <th>Cumpleaños</th>
         <th>Editar</th>
         <th>Borrar</th>
       </tr>
@@ -25,15 +26,16 @@
     <tbody>
 
       <?php
-        foreach($productos as $k => $v){
+        foreach($reservas as $k => $v){
       ?>
 
       <tr>
-        <td><?php echo $v["cod"]?></td>
-        <td><?php echo $v["descripcion"]?></td>
-        <td><?php echo $v["observaciones"]?></td>
-        <td><?php echo $v["categoria"]?></td>
-        <td>$<?php echo $v["precio"]?></td>
+        <td><?php echo $v["fecha"]?></td>
+        <td><?php echo $v["cant_personas"]?></td>
+        <td><?php echo $v["nombre"]?></td>
+        <td><?php echo $v["telefono"]?></td>
+        <td><?php echo $v["comentarios"]?></td>
+        <td><?php echo $v["cumpleanos"]?></td>
         <td>
           <a href="<?php echo base_url()?>productos_controller/editar_productos/">
             <button type="button" class="btn btn-info">
